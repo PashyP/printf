@@ -8,6 +8,7 @@
 #include <unistd.h>
 
 int _printf(const char *format, ...);
+int new_printf(const char *format, ...);
 int print_char(va_list ap);
 int print_unsigned(va_list args);
 int print_string(va_list ap);

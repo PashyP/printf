@@ -7,6 +7,7 @@
  */
 int _printf(const char *format, ...)
 {
+	char is_c, *is_s;
 	int alpha = 0;
 	va_list list;
 
@@ -27,15 +28,13 @@ int _printf(const char *format, ...)
 				alpha++;
 			} else if (*format == 'c')
 			{
-				char is_c = va_arg(list, int);
-
+				is_c = va_arg(list, int);
 				write(1, &is_c, 1);
 				format++;
 				alpha++;
 			} else if (*format == 's')
 			{
-				char *is_s = va_arg(list, char*);
-
+				is_s = va_arg(list, char*);
 				while (*is_s)
 				{
 					write(1, is_s++, 1);
